@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "singleQuote": true,
   "trailingComma": "all",
@@ -7,3 +8,14 @@
   "semi": true,
   "bracketSpacing": true
 }
+=======
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "useTabs": false,
+  "tabWidth": 2,
+  "semi": true,
+  "bracketSpacing": true
+}
+>>>>>>> e69c5c8bb51399f2643d6162356069c6ede5c6ac
