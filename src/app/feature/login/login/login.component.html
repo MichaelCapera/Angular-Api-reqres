@@ -1,0 +1,43 @@
+<!--
+  Recuerde conservar los id, no deben ser modificados
+  ids = login__email, login__password, login__password-error, login__email-error, login__btn-login
+-->
+<div class="flat card wrap">
+    <section class="card-text">
+     <div class="layout-row justify-content-around align-items-center">
+        <h3 class="title__main">Admin Login</h3>
+       </div>
+     <div class="layout-row justify-content-around align-items-center">
+         <img src="assets/images/logo/ceiba-icono.png">
+   </div>
+    </section>
+    
+    <!--Form-->
+
+    <form autocomplete="off" [formGroup]="f" (ngSubmit)="login()" >
+    <section class="card-text">
+       <div class="layout-row justify-content-center align-items-center">
+        <input id= "login__email" required formControlName="login__email" 
+        type="email" placeholder="email"  [ngClass]="{'is-invalid': invalidField('login__email')}">
+       </div>
+      <div *ngIf="invalidFeedbackEmail" class="text-center">
+      <button class = "danger text"> Please fill out this field, verificate the data</button>
+      </div>
+    </section>
+    <section class="card-text">
+      <div class="layout-row justify-content-center align-items-center">
+        <input id = "login__password" required formControlName="login__password" 
+        type="password" placeholder="password" [ngClass]="{'is-invalid': invalidField('login__password')}">
+      </div>
+      <div *ngIf="invalidFeedbackPassword" class="text-center">
+        <button class = "danger text"> Please fill out this field, verificate the data</button>
+      </div>
+    </section>
+    <section class="card-actions justify-content-center">
+       <button id="login__btn-login">
+           Sign in
+        </button>
+    </section>
+    </form>
+</div>
+

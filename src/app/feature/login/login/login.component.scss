@@ -1,0 +1,15 @@
+$background : rgb(82,5,145);
+$mainTitle : green;
+$gradient : 36deg, rgba(82,5,145,1) 0%, rgba(36,231,26,1) 0%, rgba(248,251,242,1) 56%;
+
+.wrap{
+    background: $background;
+    background: linear-gradient($gradient);
+    height: 100vh;
+    padding-top: 10vh;
+}
+
+.title__main{
+
+    color:$mainTitle;
+}
