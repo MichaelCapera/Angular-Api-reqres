@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-<<<<<<< HEAD
 import {  FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from '../../login/shared/services/login/login.service';
 import { Ilogin } from 'src/app/interfaces/ilogin';
@@ -8,8 +7,6 @@ import { Ilogin } from 'src/app/interfaces/ilogin';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
 
 
-=======
->>>>>>> e69c5c8bb51399f2643d6162356069c6ede5c6ac
 
 @Component({
   selector: 'app-login',
@@ -18,7 +15,6 @@ import Swal, { SweetAlertIcon } from 'sweetalert2';
 })
 export class LoginComponent implements OnInit{
 
-<<<<<<< HEAD
   public f = this.form.group({
     login__email:['',[Validators.required, Validators.email]],
     login__password:['',[Validators.required]]
@@ -36,12 +32,12 @@ export class LoginComponent implements OnInit{
   }
   ngOnInit(): void {
     //throw new Error('Method not implemented.');
-    console.log("module active");
+    
   }
 
   login(){
 
-    this.subForm = true;
+   this.subForm = true;
 
     if(this.f.invalid){
       return
@@ -51,18 +47,19 @@ export class LoginComponent implements OnInit{
 
       email: this.f.controls.login__email.value,
       password: this.f.controls.login__password.value,
+
     }
+
+    // console.log('data :>> ', data);
 
     this.loginService.login(data)
     .subscribe(
     (resp)=>{
-      
-      console.log('resp :>> ', resp);
 
-    },
-    
-    (err)=>{
-    
+      this.router.navigateByUrl("/");
+
+     }, (err)=>{
+    // console.log('err :>> ', err);
       Swal.fire({
         title: 'Error',
         text: "User not found",
@@ -98,29 +95,13 @@ export class LoginComponent implements OnInit{
 
 
 
-=======
-  constructor(
-    private readonly router: Router,
-  ) {
-  }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
-
->>>>>>> e69c5c8bb51399f2643d6162356069c6ede5c6ac
 
 
   /**
    * Este método no se puede modificar
    * */
-<<<<<<< HEAD
   // public redirectUsers(): void {
   //   this.router.navigateByUrl('/users/list');
   // }
-=======
-  public redirectUsers(): void {
-    this.router.navigateByUrl('/users/list');
-  }
->>>>>>> e69c5c8bb51399f2643d6162356069c6ede5c6ac
 
 }

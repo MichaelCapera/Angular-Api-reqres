@@ -1,18 +1,15 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
 import { HttpClient } from '@angular/common/http';
 import { environment } from '@environments/environment';
 import { Ilogin } from 'src/app/interfaces/ilogin';
+import { map } from 'rxjs/operators';
 
-=======
->>>>>>> e69c5c8bb51399f2643d6162356069c6ede5c6ac
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
 
-<<<<<<< HEAD
   constructor(private http:HttpClient){}
 
   /**
@@ -20,12 +17,13 @@ export class LoginService {
    * */
   public login(data:Ilogin) {
 
-    return this.http.post(environment.Login,data);
-=======
-  /**
-  * El nombre de este metodo no debería ser cambiado, pero de ser necesario podrías cambiar la firma
-   * */
-  public login() {
->>>>>>> e69c5c8bb51399f2643d6162356069c6ede5c6ac
+    return this.http.post(environment.Login,data).pipe(
+      map((resp:any)=>{
+        
+        localStorage.setItem("token", resp.token);
+
+      }
+      )
+    );
   }
 }

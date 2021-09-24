@@ -5,10 +5,7 @@
 export const environment = {
   production: false,
   API: 'https://reqres.in/api',
-<<<<<<< HEAD
   Login:'https://reqres.in/api/login'
-=======
->>>>>>> e69c5c8bb51399f2643d6162356069c6ede5c6ac
 };
 
 /*
